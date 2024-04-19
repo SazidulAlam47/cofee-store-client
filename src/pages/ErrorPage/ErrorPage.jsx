@@ -2,11 +2,15 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/HeaderFooter/Footer";
 import Header from "../../components/HeaderFooter/Header";
 import { IoMdArrowBack } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 const ErrorPage = () => {
     return (
         <>
             <Header />
+            <Helmet>
+                <title>Wanderlust Coffee | 404</title>
+            </Helmet>
             <div>
                 <Link
                     to="/"

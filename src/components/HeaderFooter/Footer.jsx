@@ -56,19 +56,19 @@ const Footer = () => {
                         <div className="flex gap-3 items-center justify-center md:justify-start">
                             <FaPhoneAlt size={20} />
                             <span className="font-raleway font-normal text-lg text-chocolate-black">
-                                +88 01533 333 333
+                                +88 01555 021 112
                             </span>
                         </div>
                         <div className="flex gap-3 items-center justify-center md:justify-start">
                             <FaEnvelope size={20} />
                             <span className="font-raleway font-normal text-lg text-chocolate-black">
-                                info@gmail.com
+                                sazidulalam20@gmail.com
                             </span>
                         </div>
                         <div className="flex gap-3 items-center justify-center md:justify-start">
                             <IoLocationSharp size={20} />
                             <span className="font-raleway font-normal text-lg text-chocolate-black">
-                                72, Wall street, King Road, Dhaka
+                                220, Dilkhola Road, Khulna
                             </span>
                         </div>
                     </div>

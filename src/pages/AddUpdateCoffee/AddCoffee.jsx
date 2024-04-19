@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { IoMdArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -25,7 +26,7 @@ const AddCoffee = () => {
             photoUrl,
         };
 
-        fetch("http://localhost:5000/coffees", {
+        fetch("https://cofee-store-server-black.vercel.app/coffees", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -54,6 +55,9 @@ const AddCoffee = () => {
                 backgroundImage: "url(/more/11.png)",
             }}
         >
+            <Helmet>
+                <title>Wanderlust Coffee | Add Coffee</title>
+            </Helmet>
             <div className="container mx-auto px-3 md:px-6 py-16 space-y-10">
                 <Link to="/" className="flex items-center gap-3">
                     <IoMdArrowBack className="text-2xl" />

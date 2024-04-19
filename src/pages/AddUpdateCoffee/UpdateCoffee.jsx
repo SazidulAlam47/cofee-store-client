@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { IoMdArrowBack } from "react-icons/io";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -26,13 +27,16 @@ const UpdateCoffee = () => {
             details,
             photoUrl,
         };
-        fetch(`http://localhost:5000/coffees/${coffee._id}`, {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
+        fetch(
+            `https://cofee-store-server-black.vercel.app/coffees/${coffee._id}`,
+            {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(data),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -54,6 +58,9 @@ const UpdateCoffee = () => {
                 backgroundImage: "url(/more/11.png)",
             }}
         >
+            <Helmet>
+                <title>Wanderlust Coffee | Update {coffee.name}</title>
+            </Helmet>
             <div className="container mx-auto px-3 md:px-6 py-16 space-y-10">
                 <Link to="/" className="flex items-center gap-3">
                     <IoMdArrowBack className="text-2xl" />

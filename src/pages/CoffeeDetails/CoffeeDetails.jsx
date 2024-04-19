@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { IoMdArrowBack } from "react-icons/io";
 import { Link, useLoaderData } from "react-router-dom";
 
@@ -9,6 +10,9 @@ const CoffeeDetails = () => {
                 backgroundImage: "url(/more/11.png)",
             }}
         >
+            <Helmet>
+                <title>Wanderlust Coffee | {coffee.name}</title>
+            </Helmet>
             <div className="container mx-auto px-3 lg:px-6 py-16 space-y-10">
                 <Link to="/" className="flex items-center gap-3">
                     <IoMdArrowBack className="text-2xl" />

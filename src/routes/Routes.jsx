@@ -15,7 +15,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch("http://localhost:5000/coffees"),
+                loader: () =>
+                    fetch(
+                        "https://cofee-store-server-black.vercel.app/coffees"
+                    ),
             },
             {
                 path: "/add-coffee",
@@ -25,13 +28,17 @@ const router = createBrowserRouter([
                 path: "/update-coffee/:id",
                 element: <UpdateCoffee />,
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/coffees/${params.id}`),
+                    fetch(
+                        `https://cofee-store-server-black.vercel.app/coffees/${params.id}`
+                    ),
             },
             {
                 path: "/coffee-details/:id",
                 element: <CoffeeDetails />,
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/coffees/${params.id}`),
+                    fetch(
+                        `https://cofee-store-server-black.vercel.app/coffees/${params.id}`
+                    ),
             },
         ],
     },
