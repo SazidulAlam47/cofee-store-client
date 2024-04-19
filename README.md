@@ -1,8 +1,10 @@
-# React + Vite
+# Coffee Store Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the client-side code for a coffee store web application. It includes a responsive frontend built with React and Vite, utilizing ESLint for code quality assurance.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Admin Panel**: An admin interface allows for the addition, removal, or update of coffee items directly from the frontend.
+-   **Backend Integration**: The client application is integrated with a backend API for dynamic data management.
+-   **Database Integration**: Utilizes a MongoDB database to store and manage coffee items and user data securely.
+-   **Responsive Design**: The frontend is fully responsive, making it accessible on various devices.
