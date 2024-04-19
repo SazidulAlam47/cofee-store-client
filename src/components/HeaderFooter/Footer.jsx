@@ -39,7 +39,7 @@ const Footer = () => {
                 <div className="container mx-auto px-3 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left">
                     <div className="space-y-4">
                         <h2 className="text-4xl font-normal">
-                            Espresso Emporium
+                            Wanderlust Coffee
                         </h2>
                         <p className="font-raleway font-normal text-base text-chocolate-black md:pr-6">
                             Always ready to be your friend. Come & Contact with
@@ -120,7 +120,7 @@ const Footer = () => {
                 }}
             >
                 <h1 className="text-white font-normal text-lg text-center">
-                    Copyright Espresso Emporium ! All Rights Reserved
+                    Copyright Wanderlust Coffee ! All Rights Reserved
                 </h1>
             </div>
         </footer>

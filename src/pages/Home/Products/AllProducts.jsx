@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import SingleProduct from "./SingleProduct";
 import { RiCupLine } from "react-icons/ri";
+import PropTypes from "prop-types";
+import { useState } from "react";
 
-const AllProducts = () => {
+const AllProducts = ({ allCoffees }) => {
+    const [showingCoffees, setShowingCoffees] = useState(allCoffees);
     return (
         <div className="container mx-auto px-3 md:px-6 py-28">
             <div className="text-center pb-10">
@@ -21,13 +24,21 @@ const AllProducts = () => {
                 </Link>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 justify-items-center">
-                <SingleProduct />
-                <SingleProduct />
-                <SingleProduct />
-                <SingleProduct />
+                {showingCoffees?.map((coffee) => (
+                    <SingleProduct
+                        key={coffee._id}
+                        coffee={coffee}
+                        showingCoffees={showingCoffees}
+                        setShowingCoffees={setShowingCoffees}
+                    />
+                ))}
             </div>
         </div>
     );
+};
+
+AllProducts.propTypes = {
+    allCoffees: PropTypes.array.isRequired,
 };
 
 export default AllProducts;

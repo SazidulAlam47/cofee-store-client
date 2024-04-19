@@ -1,7 +1,53 @@
 import { IoMdArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
+    const coffee = useLoaderData();
+
+    const handelUpdate = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = form.get("name");
+        const chef = form.get("chef");
+        const supplier = form.get("supplier");
+        const taste = form.get("taste");
+        const category = form.get("category");
+        const price = form.get("price");
+        const details = form.get("details");
+        const photoUrl = form.get("photoUrl");
+        const data = {
+            name,
+            chef,
+            supplier,
+            taste,
+            category,
+            price,
+            details,
+            photoUrl,
+        };
+        fetch(`http://localhost:5000/coffees/${coffee._id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.matchedCount > 0) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Coffee Updated!",
+                        text: "The Coffee has been updated successfully.",
+                        showConfirmButton: false,
+                        timer: 2000,
+                    });
+                }
+            });
+    };
+
     return (
         <div
             style={{
@@ -26,7 +72,7 @@ const UpdateCoffee = () => {
                         that it has a more-or-less normal distribution of
                         letters, as opposed to using Content here.
                     </p>
-                    <form>
+                    <form onSubmit={handelUpdate}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <label className="form-control">
                                 <div className="label">
@@ -36,6 +82,8 @@ const UpdateCoffee = () => {
                                 </div>
                                 <input
                                     type="text"
+                                    name="name"
+                                    defaultValue={coffee.name}
                                     placeholder="Enter coffee name"
                                     style={{ outline: "none" }}
                                     className="input placeholder:font-raleway border-2 border-transparent focus:border-chocolate-light focus:shadow-lg transition-all"
@@ -50,6 +98,8 @@ const UpdateCoffee = () => {
                                 </div>
                                 <input
                                     type="text"
+                                    name="chef"
+                                    defaultValue={coffee.chef}
                                     placeholder="Enter coffee chef"
                                     style={{ outline: "none" }}
                                     className="input placeholder:font-raleway border-2 border-transparent focus:border-chocolate-light focus:shadow-lg transition-all"
@@ -66,6 +116,8 @@ const UpdateCoffee = () => {
                                 </div>
                                 <input
                                     type="text"
+                                    name="supplier"
+                                    defaultValue={coffee.supplier}
                                     placeholder="Enter coffee supplier"
                                     style={{ outline: "none" }}
                                     className="input placeholder:font-raleway border-2 border-transparent focus:border-chocolate-light focus:shadow-lg transition-all"
@@ -80,6 +132,8 @@ const UpdateCoffee = () => {
                                 </div>
                                 <input
                                     type="text"
+                                    name="taste"
+                                    defaultValue={coffee.taste}
                                     placeholder="Enter coffee taste"
                                     style={{ outline: "none" }}
                                     className="input placeholder:font-raleway border-2 border-transparent focus:border-chocolate-light focus:shadow-lg transition-all"
@@ -96,6 +150,8 @@ const UpdateCoffee = () => {
                                 </div>
                                 <input
                                     type="text"
+                                    name="category"
+                                    defaultValue={coffee.category}
                                     placeholder="Enter coffee category"
                                     style={{ outline: "none" }}
                                     className="input placeholder:font-raleway border-2 border-transparent focus:border-chocolate-light focus:shadow-lg transition-all"
@@ -105,12 +161,14 @@ const UpdateCoffee = () => {
                             <label className="form-control">
                                 <div className="label">
                                     <span className="label-text font-raleway font-semibold">
-                                        Details
+                                        Price
                                     </span>
                                 </div>
                                 <input
                                     type="text"
-                                    placeholder="Enter coffee details"
+                                    name="price"
+                                    defaultValue={coffee.price}
+                                    placeholder="Enter coffee price"
                                     style={{ outline: "none" }}
                                     className="input placeholder:font-raleway border-2 border-transparent focus:border-chocolate-light focus:shadow-lg transition-all"
                                     required
@@ -120,11 +178,29 @@ const UpdateCoffee = () => {
                         <label className="form-control">
                             <div className="label">
                                 <span className="label-text font-raleway font-semibold">
+                                    Details
+                                </span>
+                            </div>
+                            <input
+                                type="text"
+                                name="details"
+                                defaultValue={coffee.details}
+                                placeholder="Enter coffee details"
+                                style={{ outline: "none" }}
+                                className="input placeholder:font-raleway border-2 border-transparent focus:border-chocolate-light focus:shadow-lg transition-all"
+                                required
+                            />
+                        </label>
+                        <label className="form-control">
+                            <div className="label">
+                                <span className="label-text font-raleway font-semibold">
                                     Photo
                                 </span>
                             </div>
                             <input
                                 type="text"
+                                name="photoUrl"
+                                defaultValue={coffee.photoUrl}
                                 placeholder="Enter photo URL"
                                 style={{ outline: "none" }}
                                 className="input placeholder:font-raleway border-2 border-transparent focus:border-chocolate-light focus:shadow-lg transition-all"

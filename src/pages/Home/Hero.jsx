@@ -7,7 +7,7 @@ const Hero = () => {
             }}
         >
             <div className="container mx-auto px-3 md:px-6 grid grid-cols-1 md:grid-cols-2 text-white">
-                <div className="hidden md:block"></div>
+                <div className="hidden md:block select-none"></div>
                 <div className="px-4 md:px-0">
                     <h1 className="mb-5 text-4xl md:text-5xl font-bold">
                         Would you like a Cup of Delicious Coffee?

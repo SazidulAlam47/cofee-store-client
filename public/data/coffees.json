@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Espresso",
+        "chef": "Barista John",
+        "supplier": "Coffee World Inc.",
+        "taste": "Strong, bold",
+        "category": "Classic",
+        "details": "A concentrated form of coffee made by forcing hot water through finely-ground coffee beans.",
+        "photoUrl": "https://trickbd.com/wp-content/uploads/2024/04/17/1.png"
+    },
+    {
+        "id": 2,
+        "name": "Cappuccino",
+        "chef": "Barista Maria",
+        "supplier": "Roastery Royale",
+        "taste": "Balanced, creamy",
+        "category": "Specialty",
+        "details": "A coffee drink that is traditionally prepared with equal parts espresso, steamed milk, and milk foam.",
+        "photoUrl": "https://trickbd.com/wp-content/uploads/2024/04/17/2.png"
+    },
+    {
+        "id": 3,
+        "name": "Latte",
+        "chef": "Barista Alex",
+        "supplier": "Bean Bros",
+        "taste": "Smooth, milky",
+        "category": "Specialty",
+        "details": "A coffee drink made with espresso and steamed milk.",
+        "photoUrl": "https://trickbd.com/wp-content/uploads/2024/04/17/3.png"
+    },
+    {
+        "id": 4,
+        "name": "Americano",
+        "chef": "Barista Chris",
+        "supplier": "Artisanal Beans Co.",
+        "taste": "Mild, slightly bitter",
+        "category": "Classic",
+        "details": "A coffee drink prepared by diluting espresso with hot water.",
+        "photoUrl": "https://trickbd.com/wp-content/uploads/2024/04/17/4.png"
+    },
+    {
+        "id": 5,
+        "name": "Mocha",
+        "chef": "Barista Sarah",
+        "supplier": "Bean Barn",
+        "taste": "Rich, chocolatey",
+        "category": "Specialty",
+        "details": "A coffee drink that combines espresso, steamed milk, chocolate syrup, and whipped cream.",
+        "photoUrl": "https://trickbd.com/wp-content/uploads/2024/04/17/5.png"
+    },
+    {
+        "id": 6,
+        "name": "Macchiato",
+        "chef": "Barista Max",
+        "supplier": "Java Junction",
+        "taste": "Bold, with a hint of sweetness",
+        "category": "Specialty",
+        "details": "An espresso coffee drink with a small amount of milk.",
+        "photoUrl": "https://trickbd.com/wp-content/uploads/2024/04/17/6.png"
+    }
+]
