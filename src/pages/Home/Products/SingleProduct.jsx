@@ -16,7 +16,7 @@ const SingleProduct = ({ coffee, showingCoffees, setShowingCoffees }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(
-                    `https://cofee-store-server-black.vercel.app/coffees/${coffee._id}`,
+                    `https://cofee-store-server.onrender.com/coffees/${coffee._id}`,
                     {
                         method: "DELETE",
                     }

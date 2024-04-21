@@ -27,16 +27,13 @@ const UpdateCoffee = () => {
             details,
             photoUrl,
         };
-        fetch(
-            `https://cofee-store-server-black.vercel.app/coffees/${coffee._id}`,
-            {
-                method: "PUT",
-                headers: {
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify(data),
-            }
-        )
+        fetch(`https://cofee-store-server.onrender.com/coffees/${coffee._id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

@@ -26,7 +26,7 @@ const AddCoffee = () => {
             photoUrl,
         };
 
-        fetch("https://cofee-store-server-black.vercel.app/coffees", {
+        fetch("https://cofee-store-server.onrender.com/coffees", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
