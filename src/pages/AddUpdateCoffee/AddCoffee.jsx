@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
-    const handelAddCoffee = (e) => {
+    const handleAddCoffee = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get("name");
@@ -76,7 +76,7 @@ const AddCoffee = () => {
                         that it has a more-or-less normal distribution of
                         letters, as opposed to using Content here.
                     </p>
-                    <form onSubmit={handelAddCoffee}>
+                    <form onSubmit={handleAddCoffee}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <label className="form-control">
                                 <div className="label">

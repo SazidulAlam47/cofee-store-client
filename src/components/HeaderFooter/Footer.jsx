@@ -10,7 +10,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import Swal from "sweetalert2";
 
 const Footer = () => {
-    const handelSend = (e) => {
+    const handleSend = (e) => {
         e.preventDefault();
         Swal.fire({
             icon: "success",
@@ -77,7 +77,7 @@ const Footer = () => {
                             Connect with Us
                         </h2>
                         <form
-                            onSubmit={handelSend}
+                            onSubmit={handleSend}
                             className="flex flex-col gap-4 items-center lg:items-start w-full"
                         >
                             <input

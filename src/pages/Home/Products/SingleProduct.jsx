@@ -25,13 +25,6 @@ const SingleProduct = ({ coffee, showingCoffees, setShowingCoffees }) => {
                     .then((data) => {
                         console.log(data);
                         if (data.deletedCount > 0) {
-                            //remove from UI
-                            setShowingCoffees(
-                                showingCoffees.filter(
-                                    (item) => item._id !== coffee._id
-                                )
-                            );
-
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "The Coffee has been deleted.",
@@ -39,6 +32,12 @@ const SingleProduct = ({ coffee, showingCoffees, setShowingCoffees }) => {
                                 showConfirmButton: false,
                                 timer: 2000,
                             });
+                            //remove from UI
+                            setShowingCoffees(
+                                showingCoffees.filter(
+                                    (item) => item._id !== coffee._id
+                                )
+                            );
                         }
                     });
             } else if (result.dismiss === Swal.DismissReason.cancel) {

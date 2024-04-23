@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const UpdateCoffee = () => {
     const coffee = useLoaderData();
 
-    const handelUpdate = (e) => {
+    const handleUpdate = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get("name");
@@ -76,7 +76,7 @@ const UpdateCoffee = () => {
                         that it has a more-or-less normal distribution of
                         letters, as opposed to using Content here.
                     </p>
-                    <form onSubmit={handelUpdate}>
+                    <form onSubmit={handleUpdate}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <label className="form-control">
                                 <div className="label">
