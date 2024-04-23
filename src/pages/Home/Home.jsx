@@ -2,11 +2,9 @@ import Hero from "./Hero";
 import FeatureSection from "./Features/FeatureSection";
 import InstagramSection from "./InstagramSection";
 import AllProducts from "./Products/AllProducts";
-import { useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const Home = () => {
-    const allCoffees = useLoaderData();
     return (
         <div>
             <Helmet>
@@ -14,7 +12,7 @@ const Home = () => {
             </Helmet>
             <Hero />
             <FeatureSection />
-            <AllProducts allCoffees={allCoffees} />
+            <AllProducts />
             <InstagramSection />
         </div>
     );
