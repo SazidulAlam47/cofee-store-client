@@ -1,12 +1,13 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 const InstagramSection = () => {
     const [instagramPics, setInstagramPics] = useState();
 
     useEffect(() => {
-        fetch("/data/instagram.json")
-            .then((res) => res.json())
-            .then((data) => setInstagramPics(data));
+        axios
+            .get("/data/instagram.json")
+            .then((res) => setInstagramPics(res.data));
     }, []);
 
     return (

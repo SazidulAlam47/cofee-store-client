@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import SingleFeature from "./SingleFeature";
+import axios from "axios";
 
 const FeatureSection = () => {
     const [features, setFeatures] = useState();
 
     useEffect(() => {
-        fetch("/data/features.json")
-            .then((res) => res.json())
-            .then((data) => setFeatures(data));
+        axios.get("/data/features.json").then((res) => setFeatures(res.data));
     }, []);
 
     return (

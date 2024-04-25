@@ -1,10 +1,13 @@
+import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import { IoMdArrowBack } from "react-icons/io";
 import { Link, useLoaderData } from "react-router-dom";
+import { useNavigate } from "react-router-dom/dist";
 import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
     const coffee = useLoaderData();
+    const navigate = useNavigate();
 
     const handleUpdate = (e) => {
         e.preventDefault();
@@ -27,17 +30,15 @@ const UpdateCoffee = () => {
             details,
             photoUrl,
         };
-        fetch(`https://cofee-store-server.onrender.com/coffees/${coffee._id}`, {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                if (data.matchedCount > 0) {
+
+        axios
+            .put(
+                `https://cofee-store-server.onrender.com/coffees/${coffee._id}`,
+                data
+            )
+            .then((res) => {
+                console.log(res.data);
+                if (res.data.matchedCount > 0) {
                     Swal.fire({
                         icon: "success",
                         title: "Coffee Updated!",
@@ -45,6 +46,8 @@ const UpdateCoffee = () => {
                         showConfirmButton: false,
                         timer: 2000,
                     });
+                    //navigate
+                    navigate("/");
                 }
             });
     };

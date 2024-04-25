@@ -4,16 +4,15 @@ import { RiCupLine } from "react-icons/ri";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import SingleProductSkeleton from "./SingleProductSkeleton";
+import axios from "axios";
 
 const AllProducts = () => {
     const [showingCoffees, setShowingCoffees] = useState([]);
 
     useEffect(() => {
-        fetch("https://cofee-store-server.onrender.com/coffees")
-            .then((res) => res.json())
-            .then((data) => {
-                setShowingCoffees(data);
-            });
+        axios
+            .get("https://cofee-store-server.onrender.com/coffees")
+            .then((res) => setShowingCoffees(res.data));
     }, []);
 
     return (

@@ -2,6 +2,7 @@ import { MdDelete, MdEdit, MdRemoveRedEye } from "react-icons/md";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const SingleProduct = ({ coffee, showingCoffees, setShowingCoffees }) => {
     const handleDelete = () => {
@@ -15,16 +16,13 @@ const SingleProduct = ({ coffee, showingCoffees, setShowingCoffees }) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(
-                    `https://cofee-store-server.onrender.com/coffees/${coffee._id}`,
-                    {
-                        method: "DELETE",
-                    }
-                )
-                    .then((res) => res.json())
-                    .then((data) => {
-                        console.log(data);
-                        if (data.deletedCount > 0) {
+                axios
+                    .delete(
+                        `https://cofee-store-server.onrender.com/coffees/${coffee._id}`
+                    )
+                    .then((res) => {
+                        console.log(res.data);
+                        if (res.data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "The Coffee has been deleted.",

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import { IoMdArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -26,25 +27,22 @@ const AddCoffee = () => {
             photoUrl,
         };
 
-        fetch("https://cofee-store-server.onrender.com/coffees", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                if (data.insertedId) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Coffee Added!",
-                        text: "The coffee has been added successfully.",
-                        showConfirmButton: false,
-                        timer: 2000,
-                    });
-                    e.target.reset();
+        axios
+            .post("https://cofee-store-server.onrender.com/coffees", data)
+            .then((res) => {
+                console.log(res.data);
+                if (res.data.insertedId) {
+                    console.log(data);
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Coffee Added!",
+                            text: "The coffee has been added successfully.",
+                            showConfirmButton: false,
+                            timer: 2000,
+                        });
+                        e.target.reset();
+                    }
                 }
             });
     };
