@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 import axios from "axios";
 
-const SingleProduct = ({ coffee, showingCoffees, setShowingCoffees }) => {
+const SingleProduct = ({ coffee, refetch }) => {
     const handleDelete = () => {
         Swal.fire({
             title: "Are you sure?",
@@ -31,11 +31,7 @@ const SingleProduct = ({ coffee, showingCoffees, setShowingCoffees }) => {
                                 timer: 2000,
                             });
                             //remove from UI
-                            setShowingCoffees(
-                                showingCoffees.filter(
-                                    (item) => item._id !== coffee._id
-                                )
-                            );
+                            refetch();
                         }
                     });
             } else if (result.dismiss === Swal.DismissReason.cancel) {
@@ -94,8 +90,7 @@ const SingleProduct = ({ coffee, showingCoffees, setShowingCoffees }) => {
 
 SingleProduct.propTypes = {
     coffee: PropTypes.object.isRequired,
-    showingCoffees: PropTypes.array.isRequired,
-    setShowingCoffees: PropTypes.func.isRequired,
+    refetch: PropTypes.func.isRequired,
 };
 
 export default SingleProduct;
