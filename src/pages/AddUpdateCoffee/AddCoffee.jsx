@@ -28,7 +28,7 @@ const AddCoffee = () => {
         };
 
         axios
-            .post("https://cofee-store-server.onrender.com/coffees", data)
+            .post("https://coffee-store-server-oci8.onrender.com/coffees", data)
             .then((res) => {
                 console.log(res.data);
                 if (res.data.insertedId) {

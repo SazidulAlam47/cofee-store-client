@@ -18,7 +18,7 @@ const SingleProduct = ({ coffee, refetch }) => {
             if (result.isConfirmed) {
                 axios
                     .delete(
-                        `https://cofee-store-server.onrender.com/coffees/${coffee._id}`
+                        `https://coffee-store-server-oci8.onrender.com/coffees/${coffee._id}`
                     )
                     .then((res) => {
                         console.log(res.data);

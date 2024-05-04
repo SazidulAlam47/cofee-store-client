@@ -25,7 +25,7 @@ const router = createBrowserRouter([
                 element: <UpdateCoffee />,
                 loader: ({ params }) =>
                     fetch(
-                        `https://cofee-store-server.onrender.com/coffees/${params.id}`
+                        `https://coffee-store-server-oci8.onrender.com/coffees/${params.id}`
                     ),
             },
             {
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
                 element: <CoffeeDetails />,
                 loader: ({ params }) =>
                     fetch(
-                        `https://cofee-store-server.onrender.com/coffees/${params.id}`
+                        `https://coffee-store-server-oci8.onrender.com/coffees/${params.id}`
                     ),
             },
         ],
