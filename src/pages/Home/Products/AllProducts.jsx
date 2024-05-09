@@ -16,7 +16,7 @@ const AllProducts = () => {
         queryKey: ["coffees"],
         queryFn: async () => {
             const res = await axios.get(
-                "https://coffee-store-server-oci8.onrender.com/coffees"
+                "https://coffee-store-server-blue-ten.vercel.app/coffees"
             );
             return res.data;
         },

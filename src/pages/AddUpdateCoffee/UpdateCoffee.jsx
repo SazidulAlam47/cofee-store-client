@@ -33,7 +33,7 @@ const UpdateCoffee = () => {
 
         axios
             .put(
-                `https://coffee-store-server-oci8.onrender.com/coffees/${coffee._id}`,
+                `https://coffee-store-server-blue-ten.vercel.app/coffees/${coffee._id}`,
                 data
             )
             .then((res) => {
